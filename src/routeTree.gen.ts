@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SolutionRouteImport } from './routes/solution'
 import { Route as PartenaireRouteImport } from './routes/partenaire'
 import { Route as LogistiqueRouteImport } from './routes/logistique'
+import { Route as ConditionsGeneralesRouteImport } from './routes/conditions-generales'
 import { Route as CommercantsRouteImport } from './routes/commercants'
 import { Route as ClientsRouteImport } from './routes/clients'
 import { Route as IndexRouteImport } from './routes/index'
@@ -29,6 +30,11 @@ const PartenaireRoute = PartenaireRouteImport.update({
 const LogistiqueRoute = LogistiqueRouteImport.update({
   id: '/logistique',
   path: '/logistique',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConditionsGeneralesRoute = ConditionsGeneralesRouteImport.update({
+  id: '/conditions-generales',
+  path: '/conditions-generales',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CommercantsRoute = CommercantsRouteImport.update({
@@ -51,6 +57,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/clients': typeof ClientsRoute
   '/commercants': typeof CommercantsRoute
+  '/conditions-generales': typeof ConditionsGeneralesRoute
   '/logistique': typeof LogistiqueRoute
   '/partenaire': typeof PartenaireRoute
   '/solution': typeof SolutionRoute
@@ -59,6 +66,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/clients': typeof ClientsRoute
   '/commercants': typeof CommercantsRoute
+  '/conditions-generales': typeof ConditionsGeneralesRoute
   '/logistique': typeof LogistiqueRoute
   '/partenaire': typeof PartenaireRoute
   '/solution': typeof SolutionRoute
@@ -68,6 +76,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/clients': typeof ClientsRoute
   '/commercants': typeof CommercantsRoute
+  '/conditions-generales': typeof ConditionsGeneralesRoute
   '/logistique': typeof LogistiqueRoute
   '/partenaire': typeof PartenaireRoute
   '/solution': typeof SolutionRoute
@@ -78,6 +87,7 @@ export interface FileRouteTypes {
     | '/'
     | '/clients'
     | '/commercants'
+    | '/conditions-generales'
     | '/logistique'
     | '/partenaire'
     | '/solution'
@@ -86,6 +96,7 @@ export interface FileRouteTypes {
     | '/'
     | '/clients'
     | '/commercants'
+    | '/conditions-generales'
     | '/logistique'
     | '/partenaire'
     | '/solution'
@@ -94,6 +105,7 @@ export interface FileRouteTypes {
     | '/'
     | '/clients'
     | '/commercants'
+    | '/conditions-generales'
     | '/logistique'
     | '/partenaire'
     | '/solution'
@@ -103,6 +115,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ClientsRoute: typeof ClientsRoute
   CommercantsRoute: typeof CommercantsRoute
+  ConditionsGeneralesRoute: typeof ConditionsGeneralesRoute
   LogistiqueRoute: typeof LogistiqueRoute
   PartenaireRoute: typeof PartenaireRoute
   SolutionRoute: typeof SolutionRoute
@@ -129,6 +142,13 @@ declare module '@tanstack/react-router' {
       path: '/logistique'
       fullPath: '/logistique'
       preLoaderRoute: typeof LogistiqueRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/conditions-generales': {
+      id: '/conditions-generales'
+      path: '/conditions-generales'
+      fullPath: '/conditions-generales'
+      preLoaderRoute: typeof ConditionsGeneralesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/commercants': {
@@ -159,6 +179,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ClientsRoute: ClientsRoute,
   CommercantsRoute: CommercantsRoute,
+  ConditionsGeneralesRoute: ConditionsGeneralesRoute,
   LogistiqueRoute: LogistiqueRoute,
   PartenaireRoute: PartenaireRoute,
   SolutionRoute: SolutionRoute,
