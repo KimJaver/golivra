@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Eyebrow } from "@/components/Eyebrow";
+import { SaasAccessDialog } from "@/components/SaasAccessDialog";
 import {
   Truck,
   MapPin,
@@ -8,7 +9,6 @@ import {
   ArrowRight,
   Check,
   Clock,
-  Sparkles,
   Users,
   LayoutDashboard,
   BarChart3,
@@ -108,13 +108,7 @@ function LogisticsPage() {
                 gratuite : gestion des livreurs, dispatch automatique, suivi en temps réel,
                 facturation et analytics de performance. Aucun frais, aucun engagement.
               </p>
-              <Link
-                to="/partenaire"
-                className="group mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-lg font-black text-primary transition-all hover:scale-105 active:scale-95 shadow-xl"
-              >
-                Demander un accès démo
-                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Link>
+              <SaasAccessDialog />
             </div>
             <ul className="space-y-5">
               {[
