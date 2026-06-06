@@ -7,11 +7,11 @@ import {
   ShieldCheck,
   Zap,
   ArrowRight,
-  Check,
   Clock,
   Users,
   LayoutDashboard,
   BarChart3,
+  Sparkles,
 } from "lucide-react";
 import deliveryImg from "@/assets/delivery.jpg";
 
