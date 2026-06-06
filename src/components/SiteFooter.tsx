@@ -1,7 +1,15 @@
 import { Link } from "@tanstack/react-router";
 import { SiteLogo } from "./SiteLogo";
 import { StoreBadges } from "./StoreBadges";
-import { Facebook, Instagram, Linkedin, Twitter, Phone, MapPin } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Phone, MapPin } from "lucide-react";
+
+function TikTokIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={`${className ?? ""} fill-current`} aria-hidden="true">
+      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.18a8.16 8.16 0 0 0 4.77 1.52V6.32a4.85 4.85 0 0 1-1.84-.63Z" />
+    </svg>
+  );
+}
 
 export function SiteFooter() {
   return (
@@ -46,12 +54,13 @@ export function SiteFooter() {
                 <Instagram size={18} />
               </a>
               <a
-                href="https://twitter.com/golivra"
+                href="https://tiktok.com/@golivra"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Suivez GoLivra sur TikTok"
                 className="h-10 w-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-white transition-colors cursor-pointer"
               >
-                <Twitter size={18} />
+                <TikTokIcon className="h-[18px] w-[18px]" />
               </a>
               <a
                 href="https://linkedin.com/company/golivra"

@@ -7,7 +7,7 @@ export const siteConfig = {
   socials: {
     facebook: "https://facebook.com/golivra",
     instagram: "https://instagram.com/golivra",
-    twitter: "https://twitter.com/golivra",
+    tiktok: "https://tiktok.com/@golivra",
     linkedin: "https://linkedin.com/company/golivra",
   },
 } as const;
