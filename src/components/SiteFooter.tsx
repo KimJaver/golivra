@@ -135,12 +135,8 @@ export function SiteFooter() {
               <Link to="/conditions-generales" className="hover:text-primary">
                 Conditions Générales
               </Link>
-              <Link
-                to="/conditions-generales"
-                hash="confidentialite"
-                className="hover:text-primary"
-              >
-                Confidentialité
+              <Link to="/conditions-generales" hash="application" className="hover:text-primary">
+                Application
               </Link>
               <Link to="/conditions-generales" hash="cookies" className="hover:text-primary">
                 Cookies

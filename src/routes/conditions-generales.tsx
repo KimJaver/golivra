@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Eyebrow } from "@/components/Eyebrow";
-import { FileText, ShieldCheck, Cookie, Mail, MapPin, Phone } from "lucide-react";
+import { FileText, ShieldCheck, Smartphone, Mail, MapPin, Phone } from "lucide-react";
 
 export const Route = createFileRoute("/conditions-generales")({
   head: () => ({
@@ -27,7 +27,7 @@ const LAST_UPDATED = "15 janvier 2026";
 const SECTIONS = [
   { id: "cgu", label: "Conditions Générales", icon: FileText },
   { id: "confidentialite", label: "Confidentialité", icon: ShieldCheck },
-  { id: "cookies", label: "Cookies", icon: Cookie },
+  { id: "application", label: "Application Mobile", icon: Smartphone },
 ] as const;
 
 function LegalPage() {
@@ -321,76 +321,106 @@ function LegalPage() {
                 </div>
               </article>
 
-              <article id="cookies" className="scroll-mt-28">
+              <article id="application" className="scroll-mt-28">
                 <header className="mb-8 flex items-start gap-4">
                   <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary text-white shadow-lg shadow-primary/20">
-                    <Cookie className="h-6 w-6" />
+                    <Smartphone className="h-6 w-6" />
                   </span>
                   <div>
                     <p className="text-xs font-black uppercase tracking-widest text-primary">
                       Article 03
                     </p>
                     <h2 className="mt-1 text-3xl font-black tracking-tight md:text-4xl">
-                      Politique des Cookies
+                      Application Mobile
                     </h2>
                   </div>
                 </header>
 
                 <div className="prose prose-lg max-w-none space-y-6 text-muted-foreground">
-                  <Section title="1. Qu'est-ce qu'un cookie ?">
+                  <Section title="1. Une application 100% mobile">
                     <p>
-                      Un cookie est un petit fichier texte déposé sur votre terminal (ordinateur,
-                      smartphone, tablette) lors de la visite d'un site web. Il permet au site de
-                      mémoriser vos actions et préférences pendant une durée déterminée.
+                      GoLivra est un service disponible exclusivement via son application mobile,
+                      distribuée sur l'App Store (iOS) et Google Play (Android). Le présent site
+                      internet a uniquement vocation de présentation et de mise en relation
+                      commerciale. L'utilisation du service s'effectue donc depuis l'application
+                      GoLivra installée sur votre smartphone.
                     </p>
                   </Section>
 
-                  <Section title="2. Cookies utilisés par GoLivra">
-                    <p>Nous utilisons les catégories de cookies suivantes :</p>
+                  <Section title="2. Stockage local sur l'appareil">
+                    <p>
+                      L'application stocke localement sur votre appareil certaines informations
+                      nécessaires à son fonctionnement : jeton de session, préférences d'affichage,
+                      panier en cours, données de mise en cache pour la navigation hors-ligne. Ces
+                      données restent sur votre téléphone et peuvent être effacées à tout moment en
+                      désinstallant l'application.
+                    </p>
+                  </Section>
+
+                  <Section title="3. Identifiants de l'appareil">
+                    <p>
+                      Pour assurer la sécurité de votre compte, lutter contre la fraude et mesurer
+                      la performance du service, l'application peut accéder à des identifiants
+                      techniques fournis par votre système : identifiant publicitaire (IDFA sur iOS,
+                      GAID sur Android), modèle de l'appareil, version du système d'exploitation,
+                      langue. Vous pouvez réinitialiser ou limiter ces identifiants depuis les
+                      réglages de votre téléphone.
+                    </p>
+                  </Section>
+
+                  <Section title="4. Permissions demandées">
+                    <p>
+                      Lors de l'utilisation, l'application peut solliciter l'accès à certaines
+                      fonctionnalités de votre téléphone. Chaque permission est demandée
+                      explicitement et peut être retirée à tout moment depuis les paramètres de
+                      votre appareil :
+                    </p>
                     <ul className="list-disc space-y-2 pl-6">
                       <li>
-                        <strong>Cookies strictement nécessaires :</strong> indispensables au
-                        fonctionnement du site (session utilisateur, panier). Ils ne nécessitent pas
-                        de consentement.
+                        <strong>Localisation :</strong> pour trouver les commerces proches, suivre
+                        la livraison en temps réel et calculer les frais de livraison.
                       </li>
                       <li>
-                        <strong>Cookies de mesure d'audience :</strong> nous permettent de
-                        comprendre comment les utilisateurs interagissent avec le site (pages
-                        visitées, durée, parcours) afin d'améliorer l'expérience.
+                        <strong>Notifications push :</strong> pour vous informer du statut de vos
+                        commandes, des messages du livreur et des promotions.
                       </li>
                       <li>
-                        <strong>Cookies de partage social :</strong> facilitent le partage de
-                        contenu sur les réseaux sociaux (Facebook, Instagram, TikTok, LinkedIn).
+                        <strong>Appareil photo et galerie :</strong> pour permettre aux commerçants
+                        d'illustrer leurs produits ou aux utilisateurs d'envoyer des photos dans le
+                        cadre du service.
+                      </li>
+                      <li>
+                        <strong>Contacts (optionnel) :</strong> pour faciliter le remplissage de
+                        certains formulaires.
                       </li>
                     </ul>
                   </Section>
 
-                  <Section title="3. Durée de conservation">
+                  <Section title="5. Données d'usage et analytics">
                     <p>
-                      Les cookies sont conservés pour une durée maximale de 13 mois, conformément
-                      aux recommandations de la CNIL et des autorités de protection des données.
+                      L'application collecte des données d'usage anonymisées (écrans visités, durée
+                      des sessions, erreurs rencontrées) afin d'améliorer les performances et de
+                      corriger les dysfonctionnements. Ces statistiques ne permettent pas de vous
+                      identifier directement et sont conservées pour une durée maximale de 24 mois.
                     </p>
                   </Section>
 
-                  <Section title="4. Gestion des cookies">
+                  <Section title="6. Mises à jour de l'application">
                     <p>
-                      Vous pouvez à tout moment accepter, refuser ou supprimer les cookies via les
-                      paramètres de votre navigateur. La désactivation de certains cookies peut
-                      néanmoins limiter l'accès à certaines fonctionnalités du site.
+                      GoLivra publie régulièrement des mises à jour de son application pour corriger
+                      des bugs, améliorer les performances et ajouter de nouvelles fonctionnalités.
+                      Ces mises à jour peuvent être obligatoires pour continuer à utiliser le
+                      service. La version minimale requise d'iOS et d'Android est communiquée sur
+                      les fiches de l'App Store et de Google Play.
                     </p>
                   </Section>
 
-                  <Section title="5. Contact">
+                  <Section title="7. Désinstallation">
                     <p>
-                      Pour toute question relative à l'utilisation des cookies sur GoLivra,
-                      contactez-nous à{" "}
-                      <a
-                        href="mailto:kimjaver7@gmail.com"
-                        className="font-bold text-primary hover:underline"
-                      >
-                        kimjaver7@gmail.com
-                      </a>
-                      .
+                      Vous pouvez cesser d'utiliser GoLivra et supprimer toutes les données
+                      associées à tout moment en désinstallant l'application de votre appareil. Les
+                      données serveur associées à votre compte sont conservées conformément à notre
+                      politique de confidentialité et peuvent être supprimées sur demande.
                     </p>
                   </Section>
                 </div>
