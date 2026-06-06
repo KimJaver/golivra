@@ -132,13 +132,17 @@ export function SiteFooter() {
               © {new Date().getFullYear()} GoLivra. Tous droits réservés.
             </p>
             <div className="flex flex-wrap gap-x-8 gap-y-4 text-sm font-medium text-muted-foreground">
-              <Link to="/" className="hover:text-primary">
+              <Link to="/conditions-generales" className="hover:text-primary">
                 Conditions Générales
               </Link>
-              <Link to="/" className="hover:text-primary">
+              <Link
+                to="/conditions-generales"
+                hash="confidentialite"
+                className="hover:text-primary"
+              >
                 Confidentialité
               </Link>
-              <Link to="/" className="hover:text-primary">
+              <Link to="/conditions-generales" hash="cookies" className="hover:text-primary">
                 Cookies
               </Link>
             </div>
