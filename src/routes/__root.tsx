@@ -79,10 +79,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover" },
       { title: "GoLivra - L'infrastructure du commerce au Congo" },
       { name: "description", content: "GoLivra réunit commerces, clients et transporteurs sur une plateforme unique pour transformer l'économie locale au Congo." },
       { name: "author", content: "GoLivra" },
+      { name: "apple-mobile-web-app-capable", content: "yes" },
+      { name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
+      { name: "apple-mobile-web-app-title", content: "GoLivra" },
       { property: "og:title", content: "GoLivra - L'infrastructure du commerce au Congo" },
       { property: "og:description", content: "La plateforme unique pour commander, vendre et livrer à Brazzaville." },
       { property: "og:type", content: "website" },

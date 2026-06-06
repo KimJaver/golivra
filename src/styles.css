@@ -177,6 +177,22 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Fix for iOS momentum scrolling */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Fix for iOS input styling */
+  input, textarea, select {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: var(--radius);
+  }
+
+  /* Ensure buttons have cursor pointer for Safari click registration */
+  button, [role="button"], a {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
   }
 
   h1, h2, h3, h4 {

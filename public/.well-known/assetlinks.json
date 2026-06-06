@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "kimjaver.golivra",
+      "sha256_cert_fingerprints": [
+        "FA:C6:17:45:DC:09:03:78:6F:B9:ED:46:26:05:20:1F:D5:99:11:51:BC:E3:D8:10:7A:1C:F2:00:13:94:E0:41"
+      ]
+    }
+  }
+]
