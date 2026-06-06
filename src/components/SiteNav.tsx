@@ -7,9 +7,6 @@ import { Menu, X, ArrowRight } from "lucide-react";
 const links = [
   { to: "/", label: "Accueil" },
   { to: "/solution", label: "Solution" },
-  { to: "/clients", label: "Clients" },
-  { to: "/commercants", label: "Commerçants" },
-  { to: "/logistique", label: "Logistique" },
 ] as const;
 
 export function SiteNav() {
