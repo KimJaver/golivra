@@ -54,7 +54,7 @@ export function SiteFooter() {
                 <Instagram size={18} />
               </a>
               <a
-                href="https://tiktok.com/@golivra"
+                href="https://www.tiktok.com/@golivra.cg"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Suivez GoLivra sur TikTok"

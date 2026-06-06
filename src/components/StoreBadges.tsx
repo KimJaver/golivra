@@ -1,4 +1,4 @@
-import { Palmtree } from "lucide-react";
+import { useId } from "react";
 import { toast } from "sonner";
 import { siteConfig } from "@/lib/site-config";
 
@@ -78,12 +78,27 @@ function PlayGlyph({ className }: { className: string }) {
 }
 
 function PalmGlyph({ className }: { className: string }) {
+  const clipId = useId();
   return (
-    <Palmtree
-      className={`${className} text-emerald-500 shrink-0`}
-      strokeWidth={2}
-      aria-hidden="true"
-    />
+    <svg viewBox="0 0 64 64" className={`${className} shrink-0`} aria-hidden="true">
+      <defs>
+        <clipPath id={clipId}>
+          <rect width="64" height="64" rx="14" />
+        </clipPath>
+      </defs>
+      <g clipPath={`url(#${clipId})`}>
+        <rect x="0" y="0" width="16" height="64" fill="#E94B3C" />
+        <rect x="16" y="0" width="16" height="64" fill="#F58220" />
+        <rect x="32" y="0" width="16" height="64" fill="#FFC93D" />
+        <rect x="48" y="0" width="16" height="64" fill="#4FC3F7" />
+      </g>
+      <path
+        d="M 14 18 C 14 16.9 14.9 16 16 16 L 30 16 C 37 16 42 20.5 42 26.5 C 42 32.5 37 37 30 37 L 22 37 L 22 48 C 22 49.1 21.1 50 20 50 L 16 50 C 14.9 50 14 49.1 14 48 Z M 22 22 L 22 31 L 30 31 C 33 31 36 29 36 26.5 C 36 24 33 22 30 22 Z"
+        fill="white"
+        fillRule="evenodd"
+      />
+      <rect x="46" y="16" width="6" height="34" fill="white" />
+    </svg>
   );
 }
 
