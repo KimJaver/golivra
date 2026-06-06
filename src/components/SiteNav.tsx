@@ -1,7 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { SiteLogo } from "./SiteLogo";
 import { useState, useEffect } from "react";
-import { Menu, X, ArrowRight, Phone, MapPin, Mail } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 
 const links = [
   { to: "/", label: "Accueil" },
@@ -69,7 +69,8 @@ export function SiteNav() {
         </div>
 
         <button
-          onClick={() => setIsOpen(!isOpen)}
+          type="button"
+          onClick={() => setIsOpen((v) => !v)}
           className="relative flex h-11 w-11 items-center justify-center rounded-full bg-secondary text-foreground transition-colors hover:bg-secondary/80 active:scale-90 lg:hidden"
           aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
           aria-expanded={isOpen}
@@ -103,75 +104,41 @@ export function SiteNav() {
         role="dialog"
         aria-modal="true"
         aria-label="Menu principal"
-        className={`fixed inset-x-0 top-20 z-40 max-h-[calc(100vh-5rem)] overflow-y-auto bg-background shadow-2xl shadow-black/10 ring-1 ring-border/50 transition-all duration-300 ease-out lg:hidden ${
+        className={`fixed inset-x-0 top-20 z-40 bg-background shadow-2xl shadow-black/10 ring-1 ring-border/50 transition-all duration-300 ease-out lg:hidden ${
           isOpen ? "translate-y-0 opacity-100" : "-translate-y-3 opacity-0 pointer-events-none"
         }`}
       >
-        <div className="flex flex-col gap-2 p-6">
-          <ul className="flex flex-col gap-2">
-            {links.map((l) => {
-              const active = pathname === l.to;
-              return (
-                <li key={l.to}>
-                  <Link
-                    to={l.to}
-                    className={`group flex items-center justify-between rounded-2xl px-5 py-4 text-lg font-black transition-all ${
-                      active
-                        ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
-                        : "bg-secondary/50 text-foreground hover:bg-secondary"
-                    }`}
-                  >
-                    {l.label}
-                    <ArrowRight
-                      size={18}
-                      className={`transition-transform group-hover:translate-x-1 ${
-                        active ? "opacity-100" : "opacity-40"
-                      }`}
-                    />
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
+        <div className="flex flex-col gap-3 p-6">
+          {links.map((l) => {
+            const active = pathname === l.to;
+            return (
+              <Link
+                key={l.to}
+                to={l.to}
+                className={`group flex items-center justify-between rounded-2xl px-5 py-4 text-lg font-black transition-all ${
+                  active
+                    ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
+                    : "bg-secondary/50 text-foreground hover:bg-secondary"
+                }`}
+              >
+                {l.label}
+                <ArrowRight
+                  size={18}
+                  className={`transition-transform group-hover:translate-x-1 ${
+                    active ? "opacity-100" : "opacity-40"
+                  }`}
+                />
+              </Link>
+            );
+          })}
 
           <Link
             to="/partenaire"
-            className="mt-2 flex items-center justify-center gap-3 rounded-2xl bg-foreground px-5 py-4 text-lg font-black text-background shadow-lg transition-all hover:scale-[1.02] active:scale-95"
+            className="mt-1 flex items-center justify-center gap-3 rounded-2xl bg-foreground px-5 py-4 text-lg font-black text-background shadow-lg transition-all hover:scale-[1.02] active:scale-95"
           >
             Devenir partenaire
             <ArrowRight size={20} />
           </Link>
-
-          <div className="mt-6 flex flex-col gap-1 border-t border-border/60 pt-5">
-            <a
-              href="tel:+242067811462"
-              className="group flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-bold text-muted-foreground transition-colors hover:bg-secondary/50 hover:text-foreground"
-            >
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                <Phone size={15} />
-              </span>
-              +242 06 781 14 62
-            </a>
-            <div className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-bold text-muted-foreground">
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                <MapPin size={15} />
-              </span>
-              Brazzaville, République du Congo
-            </div>
-            <a
-              href="mailto:kimjaver7@gmail.com"
-              className="group flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-bold text-muted-foreground transition-colors hover:bg-secondary/50 hover:text-foreground"
-            >
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                <Mail size={15} />
-              </span>
-              Nous écrire
-            </a>
-          </div>
-
-          <p className="mt-4 text-center text-xs font-black uppercase tracking-[0.25em] text-muted-foreground/60">
-            GoLivra © 2026
-          </p>
         </div>
       </div>
     </header>
