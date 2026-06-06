@@ -1,3 +1,5 @@
+import { Palmtree } from "lucide-react";
+import { toast } from "sonner";
 import { siteConfig } from "@/lib/site-config";
 
 type Variant = "solid" | "outline";
@@ -35,6 +37,21 @@ const VARIANT_STYLES: Record<Variant, string> = {
     "bg-white/5 text-white ring-1 ring-white/25 backdrop-blur hover:bg-white/15 hover:ring-white/50",
 };
 
+const STORE_LABELS = {
+  appStore: "l'App Store",
+  playStore: "Google Play",
+  palmStore: "Palm Store",
+} as const;
+
+type StoreKey = keyof typeof STORE_LABELS;
+
+function notifyComingSoon(store: StoreKey) {
+  toast("Bientôt disponible", {
+    description: `L'application GoLivra arrive très prochainement sur ${STORE_LABELS[store]}.`,
+    duration: 4000,
+  });
+}
+
 function AppleGlyph({ className }: { className: string }) {
   return (
     <svg viewBox="0 0 384 512" className={`${className} fill-current shrink-0`} aria-hidden="true">
@@ -60,6 +77,50 @@ function PlayGlyph({ className }: { className: string }) {
   );
 }
 
+function PalmGlyph({ className }: { className: string }) {
+  return (
+    <Palmtree
+      className={`${className} text-emerald-500 shrink-0`}
+      strokeWidth={2}
+      aria-hidden="true"
+    />
+  );
+}
+
+const STORES: Array<{
+  key: StoreKey;
+  url: string;
+  ariaLabel: string;
+  caption: string;
+  name: string;
+  Icon: (props: { className: string }) => JSX.Element;
+}> = [
+  {
+    key: "appStore",
+    url: siteConfig.appStoreUrl,
+    ariaLabel: "Télécharger GoLivra sur l'App Store",
+    caption: "Télécharger sur",
+    name: "App Store",
+    Icon: AppleGlyph,
+  },
+  {
+    key: "playStore",
+    url: siteConfig.playStoreUrl,
+    ariaLabel: "Télécharger GoLivra sur Google Play",
+    caption: "Disponible sur",
+    name: "Google Play",
+    Icon: PlayGlyph,
+  },
+  {
+    key: "palmStore",
+    url: siteConfig.palmStoreUrl,
+    ariaLabel: "Télécharger GoLivra sur Palm Store",
+    caption: "Disponible sur",
+    name: "Palm Store",
+    Icon: PalmGlyph,
+  },
+];
+
 export function StoreBadges({
   variant = "solid",
   size = "default",
@@ -71,37 +132,27 @@ export function StoreBadges({
 
   return (
     <div className={`flex flex-wrap items-center gap-3 ${className}`}>
-      <a
-        href={siteConfig.appStoreUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Télécharger GoLivra sur l'App Store"
-        className={`${base} ${v}`}
-      >
-        <AppleGlyph className={s.icon} />
-        <span className="flex flex-col items-start leading-tight">
-          <span className={`${s.small} font-medium uppercase tracking-wider opacity-70`}>
-            Télécharger sur
-          </span>
-          <span className={`${s.big} font-black tracking-tight`}>App Store</span>
-        </span>
-      </a>
-
-      <a
-        href={siteConfig.playStoreUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Télécharger GoLivra sur Google Play"
-        className={`${base} ${v}`}
-      >
-        <PlayGlyph className={s.icon} />
-        <span className="flex flex-col items-start leading-tight">
-          <span className={`${s.small} font-medium uppercase tracking-wider opacity-70`}>
-            Disponible sur
-          </span>
-          <span className={`${s.big} font-black tracking-tight`}>Google Play</span>
-        </span>
-      </a>
+      {STORES.map((store) => {
+        const Icon = store.Icon;
+        return (
+          <button
+            key={store.key}
+            type="button"
+            data-store-url={store.url}
+            onClick={() => notifyComingSoon(store.key)}
+            aria-label={store.ariaLabel}
+            className={`${base} ${v}`}
+          >
+            <Icon className={s.icon} />
+            <span className="flex flex-col items-start leading-tight">
+              <span className={`${s.small} font-medium uppercase tracking-wider opacity-70`}>
+                {store.caption}
+              </span>
+              <span className={`${s.big} font-black tracking-tight`}>{store.name}</span>
+            </span>
+          </button>
+        );
+      })}
     </div>
   );
 }

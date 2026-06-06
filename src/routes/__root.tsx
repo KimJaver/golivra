@@ -14,6 +14,7 @@ import favicon from "@/assets/logo-golivra.png?url";
 import { reportAppError } from "../lib/error-reporting";
 import { SiteNav } from "../components/SiteNav";
 import { SiteFooter } from "../components/SiteFooter";
+import { Toaster } from "../components/ui/sonner";
 
 function NotFoundComponent() {
   return (
@@ -173,6 +174,7 @@ function RootComponent() {
         </main>
         <SiteFooter />
       </div>
+      <Toaster position="bottom-center" richColors closeButton />
     </QueryClientProvider>
   );
 }
