@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { SiteLogo } from "./SiteLogo";
 import { StoreBadges } from "./StoreBadges";
-import { Facebook, Instagram, Linkedin, Twitter, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Twitter, Phone, MapPin } from "lucide-react";
 
 export function SiteFooter() {
   return (
@@ -108,10 +108,6 @@ export function SiteFooter() {
               <li className="flex items-center gap-3">
                 <MapPin size={18} className="text-primary" />
                 Brazzaville, République du Congo
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail size={18} className="text-primary" />
-                contact@golivra.app
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-primary" />
