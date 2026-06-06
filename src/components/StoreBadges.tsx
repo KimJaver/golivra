@@ -13,7 +13,7 @@ interface StoreBadgesProps {
 
 const SIZE_STYLES: Record<
   Size,
-  { container: string; icon: string; small: string; big: string; gap: string }
+  { container: string; icon: string; small: string; big: string; gap: string; minW: string }
 > = {
   default: {
     container: "h-14 px-5",
@@ -21,6 +21,7 @@ const SIZE_STYLES: Record<
     small: "text-[10px]",
     big: "text-lg",
     gap: "gap-3",
+    minW: "min-w-[200px] sm:min-w-[210px]",
   },
   sm: {
     container: "h-12 px-4",
@@ -28,6 +29,7 @@ const SIZE_STYLES: Record<
     small: "text-[9px]",
     big: "text-sm",
     gap: "gap-2.5",
+    minW: "min-w-[170px] sm:min-w-[180px]",
   },
 };
 
@@ -143,10 +145,12 @@ export function StoreBadges({
 }: StoreBadgesProps) {
   const s = SIZE_STYLES[size];
   const v = VARIANT_STYLES[variant];
-  const base = `inline-flex items-center ${s.gap} ${s.container} rounded-2xl font-display transition-all hover:scale-[1.03] active:scale-95`;
+  const base = `inline-flex items-center justify-center ${s.gap} ${s.container} ${s.minW} rounded-2xl font-display transition-all hover:scale-[1.03] active:scale-95`;
 
   return (
-    <div className={`flex flex-wrap items-center gap-3 ${className}`}>
+    <div
+      className={`flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center ${className}`}
+    >
       {STORES.map((store) => {
         const Icon = store.Icon;
         return (
