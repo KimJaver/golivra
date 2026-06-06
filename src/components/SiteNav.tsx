@@ -1,5 +1,6 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { SiteLogo } from "./SiteLogo";
+import { StoreBadges } from "./StoreBadges";
 import { useState, useEffect } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
 
@@ -35,7 +36,7 @@ export function SiteNav() {
         <Link to="/" className="group flex items-center gap-2 transition-transform active:scale-95">
           <SiteLogo className="h-10 w-auto transition-all group-hover:brightness-110" />
         </Link>
-        
+
         <div className="hidden items-center gap-2 lg:flex">
           <ul className="flex items-center gap-1">
             {links.map((l) => {
@@ -59,9 +60,9 @@ export function SiteNav() {
               );
             })}
           </ul>
-          
+
           <div className="mx-4 h-6 w-px bg-border/60" />
-          
+
           <Link
             to="/partenaire"
             className="rounded-full bg-foreground px-6 py-2.5 text-sm font-black text-background shadow-lg shadow-black/5 transition-all hover:scale-105 hover:bg-foreground/90 active:scale-95"
@@ -69,9 +70,9 @@ export function SiteNav() {
             Devenir partenaire
           </Link>
         </div>
-        
+
         {/* Mobile menu button */}
-        <button 
+        <button
           onClick={() => setIsOpen(!isOpen)}
           className="flex h-11 w-11 items-center justify-center rounded-full bg-secondary text-foreground lg:hidden transition-transform active:scale-90"
           aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
@@ -81,7 +82,7 @@ export function SiteNav() {
       </nav>
 
       {/* Mobile Menu Overlay */}
-      <div 
+      <div
         className={`fixed inset-0 top-20 z-40 bg-background transition-all duration-500 lg:hidden ${
           isOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
         }`}
@@ -107,7 +108,7 @@ export function SiteNav() {
               );
             })}
           </ul>
-          
+
           <div className="mt-8 pt-8 border-t border-border">
             <Link
               to="/partenaire"
@@ -117,9 +118,15 @@ export function SiteNav() {
               <ArrowRight size={22} />
             </Link>
           </div>
-          
-          <div className="mt-auto pt-12 text-center">
-            <p className="text-sm font-bold text-muted-foreground uppercase tracking-widest">
+
+          <div className="mt-auto pt-12">
+            <p className="text-xs font-black uppercase tracking-[0.25em] text-muted-foreground">
+              Téléchargez l'application
+            </p>
+            <div className="mt-5">
+              <StoreBadges variant="solid" size="sm" />
+            </div>
+            <p className="mt-10 text-center text-sm font-bold uppercase tracking-widest text-muted-foreground">
               GoLivra — Brazzaville
             </p>
           </div>

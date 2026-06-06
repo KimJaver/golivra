@@ -1,14 +1,23 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { Eyebrow } from "@/components/Eyebrow";
-import { ShoppingBag, Search, CreditCard, ShieldCheck, ArrowRight, Check } from "lucide-react";
+import { StoreBadges } from "@/components/StoreBadges";
+import { ShoppingBag, Search, CreditCard, Check } from "lucide-react";
 import heroImg from "@/assets/hero-brazzaville.jpg";
 
 export const Route = createFileRoute("/clients")({
   head: () => ({
     meta: [
       { title: "Faites-vous livrer à Brazzaville — GoLivra Clients" },
-      { name: "description", content: "Commandez vos repas et articles préférés sur GoLivra. Livraison rapide, paiement Mobile Money sécurisé et suivi en temps réel à Brazzaville." },
-      { name: "keywords", content: "commander repas Brazzaville, shopping en ligne Congo, livraison rapide Brazzaville, GoLivra clients" },
+      {
+        name: "description",
+        content:
+          "Commandez vos repas et articles préférés sur GoLivra. Livraison rapide, paiement Mobile Money sécurisé et suivi en temps réel à Brazzaville.",
+      },
+      {
+        name: "keywords",
+        content:
+          "commander repas Brazzaville, shopping en ligne Congo, livraison rapide Brazzaville, GoLivra clients",
+      },
     ],
   }),
   component: ClientsPage,
@@ -31,8 +40,8 @@ function ClientsPage() {
             <span className="text-primary italic">votre poche.</span>
           </h1>
           <p className="mt-8 max-w-2xl text-xl leading-relaxed text-white/60">
-            Une marketplace intuitive pour découvrir le meilleur de votre ville 
-            et commander en un clic. Plus besoin de vous déplacer, GoLivra vient à vous.
+            Une marketplace intuitive pour découvrir le meilleur de votre ville et commander en un
+            clic. Plus besoin de vous déplacer, GoLivra vient à vous.
           </p>
         </div>
       </section>
@@ -57,7 +66,10 @@ function ClientsPage() {
                 text: "Des options de paiement sécurisées et adaptées : Mobile Money ou paiement à la livraison selon vos préférences.",
               },
             ].map((f) => (
-              <div key={f.title} className="group rounded-[2.5rem] border border-border bg-card p-10 transition-all hover:shadow-xl">
+              <div
+                key={f.title}
+                className="group rounded-[2.5rem] border border-border bg-card p-10 transition-all hover:shadow-xl"
+              >
                 <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-transform group-hover:scale-110">
                   <f.icon className="h-8 w-8" />
                 </div>
@@ -77,7 +89,7 @@ function ClientsPage() {
               Achetez l'esprit tranquille.
             </h2>
           </div>
-          
+
           <div className="mt-20 grid gap-8 md:grid-cols-2">
             {[
               {
@@ -97,7 +109,10 @@ function ClientsPage() {
                 text: "Pas de frais cachés. Le prix affiché est le prix que vous payez, frais de livraison inclus et détaillés.",
               },
             ].map((item) => (
-              <div key={item.title} className="flex gap-6 rounded-3xl bg-card p-8 ring-1 ring-border">
+              <div
+                key={item.title}
+                className="flex gap-6 rounded-3xl bg-card p-8 ring-1 ring-border"
+              >
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-white">
                   <Check className="h-5 w-5" />
                 </div>
@@ -118,15 +133,15 @@ function ClientsPage() {
             <div className="relative z-10 max-w-3xl">
               <h2 className="text-4xl font-black tracking-tight md:text-6xl">Prêt à commander ?</h2>
               <p className="mt-8 text-xl text-white/80">
-                Téléchargez l'application GoLivra et commencez votre expérience de shopping 
-                nouvelle génération dès aujourd'hui.
+                Téléchargez l'application GoLivra et commencez votre expérience de shopping nouvelle
+                génération dès aujourd'hui.
               </p>
-              <div className="mt-12 flex flex-wrap gap-4">
-                <Link to="/" className="group inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-lg font-bold text-primary transition-all hover:scale-105 active:scale-95">
-                  Télécharger l'app
-                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-                </Link>
+              <div className="mt-12">
+                <StoreBadges variant="outline" />
               </div>
+              <p className="mt-8 text-sm font-medium uppercase tracking-widest text-white/60">
+                Disponible sur iOS & Android · Compatible Mobile Money
+              </p>
             </div>
           </div>
         </div>
