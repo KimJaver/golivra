@@ -8,8 +8,9 @@ import deliveryImg from "@/assets/delivery.jpg";
 export const Route = createFileRoute("/solution")({
   head: () => ({
     meta: [
-      { title: "Solution — GoLivra" },
-      { name: "description", content: "Une plateforme. Trois systèmes. Un écosystème. Marketplace, restaurants et livraison à la demande." },
+      { title: "Notre Solution E-commerce & Logistique — GoLivra" },
+      { name: "description", content: "Découvrez comment GoLivra transforme le commerce au Congo avec sa marketplace, son système de gestion pour restaurants et son réseau logistique intelligent." },
+      { name: "keywords", content: "solution e-commerce Congo, logiciel restaurant Brazzaville, logistique dernier kilomètre, marketplace locale" },
     ],
   }),
   component: SolutionPage,
@@ -73,7 +74,7 @@ function SolutionPage() {
                 <div className="absolute -inset-4 rounded-[2.5rem] bg-primary/5 blur-2xl transition-all group-hover:bg-primary/10" />
                 <img 
                   src={b.img} 
-                  alt={b.title} 
+                  alt={`GoLivra ${b.title} - Solution e-commerce et logistique au Congo`} 
                   loading="lazy" 
                   width={1200} 
                   height={900} 

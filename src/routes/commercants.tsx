@@ -6,8 +6,9 @@ import vendorImg from "@/assets/vendor.jpg";
 export const Route = createFileRoute("/commercants")({
   head: () => ({
     meta: [
-      { title: "Espace Commerçants — GoLivra" },
-      { name: "description", content: "Digitalisez votre boutique, gérez vos stocks et boostez vos ventes avec les outils puissants de GoLivra." },
+      { title: "Vendez en ligne à Brazzaville — GoLivra Commerçants" },
+      { name: "description", content: "Digitalisez votre boutique ou restaurant avec GoLivra. Gérez vos stocks, recevez des paiements et boostez vos ventes grâce à nos outils d'administration." },
+      { name: "keywords", content: "vendre en ligne Congo, gestion stock boutique, plateforme vendeur Brazzaville, digitaliser commerce" },
     ],
   }),
   component: MerchantsPage,
@@ -20,7 +21,7 @@ function MerchantsPage() {
         <div className="absolute top-0 right-0 -z-10 h-full w-1/2 bg-primary/10 blur-[120px]" />
         <img
           src={vendorImg}
-          alt="Commerçant GoLivra"
+          alt="Commerçant partenaire GoLivra gérant ses ventes à Brazzaville"
           className="absolute inset-0 -z-20 h-full w-full object-cover opacity-20"
         />
         <div className="mx-auto max-w-7xl px-6">

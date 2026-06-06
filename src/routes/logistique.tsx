@@ -6,8 +6,9 @@ import deliveryImg from "@/assets/delivery.jpg";
 export const Route = createFileRoute("/logistique")({
   head: () => ({
     meta: [
-      { title: "Espace Logistique — GoLivra" },
-      { name: "description", content: "Optimisez vos livraisons, gérez votre flotte et garantissez une satisfaction totale avec le réseau GoLivra." },
+      { title: "Optimisez vos Livraisons à Brazzaville — GoLivra Logistique" },
+      { name: "description", content: "Rejoignez le réseau logistique GoLivra. Optimisez vos trajets, gérez votre flotte de livreurs et garantissez une livraison rapide à vos clients." },
+      { name: "keywords", content: "logistique Congo, service livraison Brazzaville, gestion de flotte, livreur Brazzaville" },
     ],
   }),
   component: LogisticsPage,
@@ -20,7 +21,7 @@ function LogisticsPage() {
         <div className="absolute top-0 right-0 -z-10 h-full w-1/2 bg-primary/10 blur-[120px]" />
         <img
           src={deliveryImg}
-          alt="Livraison GoLivra"
+          alt="Livreur GoLivra en pleine livraison à Brazzaville"
           className="absolute inset-0 -z-20 h-full w-full object-cover opacity-20"
         />
         <div className="mx-auto max-w-7xl px-6">

@@ -11,10 +11,11 @@ import { Eyebrow } from "@/components/Eyebrow";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "GoLivra — Commandez, vendez et livrez depuis une seule plateforme." },
-      { name: "description", content: "GoLivra réunit commerces, clients et entreprises de livraison pour simplifier les commandes, les paiements et la logistique." },
-      { property: "og:title", content: "GoLivra — Commandez, vendez et livrez depuis une seule plateforme." },
-      { property: "og:description", content: "GoLivra connecte commerces, clients et transporteurs sur une plateforme unique." },
+      { title: "GoLivra — La plateforme de commerce et livraison n°1 au Congo" },
+      { name: "description", content: "GoLivra connecte commerçants, restaurants et clients à Brazzaville. Commandez en ligne, vendez vos produits et gérez vos livraisons sur une seule plateforme sécurisée." },
+      { name: "keywords", content: "GoLivra, livraison Brazzaville, commander nourriture Congo, marketplace Congo, vente en ligne Brazzaville" },
+      { property: "og:title", content: "GoLivra — La plateforme de commerce et livraison n°1 au Congo" },
+      { property: "og:description", content: "Digitalisez votre commerce et simplifiez vos livraisons à Brazzaville." },
     ],
   }),
   component: Index,
@@ -166,7 +167,7 @@ function Index() {
             <div className="relative lg:ml-auto">
               <div className="absolute -inset-4 rounded-[3rem] bg-primary/10 blur-2xl" />
               <div className="relative aspect-[4/5] w-full max-w-md overflow-hidden rounded-[3rem] border-8 border-card bg-card shadow-2xl">
-                <img src={appMockup} alt="GoLivra App App" className="h-full w-full object-cover" />
+                <img src={appMockup} alt="Interface de l'application mobile GoLivra pour commander en ligne à Brazzaville" className="h-full w-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 <div className="absolute bottom-8 left-8 right-8 text-white">
                   <p className="text-sm font-bold uppercase tracking-widest text-white/70">Interface Client</p>

@@ -83,6 +83,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "GoLivra - L'infrastructure du commerce au Congo" },
       { name: "description", content: "GoLivra réunit commerces, clients et transporteurs sur une plateforme unique pour transformer l'économie locale au Congo." },
       { name: "author", content: "GoLivra" },
+      { name: "keywords", content: "GoLivra, Brazzaville, Congo, livraison, commerce, marketplace, restaurant, boutique, logistique, e-commerce Congo" },
+      { name: "robots", content: "index, follow" },
       { name: "apple-mobile-web-app-capable", content: "yes" },
       { name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
       { name: "apple-mobile-web-app-title", content: "GoLivra" },
@@ -113,6 +115,29 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         rel: "stylesheet",
         href: appCss,
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "GoLivra",
+          "url": "https://golivra.com",
+          "logo": "https://golivra.com/logo-golivra.png",
+          "description": "L'infrastructure du commerce au Congo. Marketplace, gestion de restaurants et réseau logistique interconnecté.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Brazzaville",
+            "addressCountry": "CG"
+          },
+          "sameAs": [
+            "https://facebook.com/golivra",
+            "https://twitter.com/golivra",
+            "https://instagram.com/golivra"
+          ]
+        }),
       },
     ],
   }),

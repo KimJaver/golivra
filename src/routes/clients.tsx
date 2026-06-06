@@ -6,8 +6,9 @@ import heroImg from "@/assets/hero-brazzaville.jpg";
 export const Route = createFileRoute("/clients")({
   head: () => ({
     meta: [
-      { title: "Espace Clients — GoLivra" },
-      { name: "description", content: "Découvrez le meilleur de votre ville. Commandez en un clic et faites-vous livrer rapidement avec GoLivra." },
+      { title: "Faites-vous livrer à Brazzaville — GoLivra Clients" },
+      { name: "description", content: "Commandez vos repas et articles préférés sur GoLivra. Livraison rapide, paiement Mobile Money sécurisé et suivi en temps réel à Brazzaville." },
+      { name: "keywords", content: "commander repas Brazzaville, shopping en ligne Congo, livraison rapide Brazzaville, GoLivra clients" },
     ],
   }),
   component: ClientsPage,
@@ -20,7 +21,7 @@ function ClientsPage() {
         <div className="absolute top-0 right-0 -z-10 h-full w-1/2 bg-primary/10 blur-[120px]" />
         <img
           src={heroImg}
-          alt="Shopping à Brazzaville"
+          alt="Client utilisant l'application GoLivra pour ses achats à Brazzaville"
           className="absolute inset-0 -z-20 h-full w-full object-cover opacity-20"
         />
         <div className="mx-auto max-w-7xl px-6">
