@@ -212,15 +212,15 @@ function Index() {
             </div>
 
             <div className="relative lg:ml-auto">
-              <div className="absolute -inset-6 rounded-[3rem] bg-primary/10 blur-3xl" />
-              <div className="relative aspect-[4/5] w-full max-w-xl overflow-hidden rounded-[3rem] border-8 border-card bg-card shadow-2xl">
+              <div className="absolute -inset-8 rounded-[2rem] bg-primary/10 blur-3xl" />
+              <div className="relative aspect-[3/2] w-full max-w-2xl overflow-hidden rounded-2xl border-4 border-card bg-card shadow-2xl">
                 <img
                   src={appMockup}
                   alt="Interface de l'application mobile GoLivra pour commander en ligne à Brazzaville"
                   className="h-full w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                <div className="absolute bottom-8 left-8 right-8 text-white">
+                <div className="absolute bottom-6 left-6 right-6 text-white">
                   <p className="text-sm font-bold uppercase tracking-widest text-white/70">
                     Interface Client
                   </p>
