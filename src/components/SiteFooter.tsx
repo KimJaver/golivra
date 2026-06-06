@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { SiteLogo } from "./SiteLogo";
+import { Facebook, Instagram, Linkedin, Twitter, Mail, Phone, MapPin } from "lucide-react";
 
 export function SiteFooter() {
   return (
@@ -13,10 +14,18 @@ export function SiteFooter() {
               Commandez, vendez et livrez sans friction.
             </p>
             <div className="mt-8 flex gap-4">
-              {/* Social placeholders */}
-              <div className="h-10 w-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-white transition-colors cursor-pointer">FB</div>
-              <div className="h-10 w-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-white transition-colors cursor-pointer">IG</div>
-              <div className="h-10 w-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-white transition-colors cursor-pointer">LN</div>
+              <a href="https://facebook.com/golivra" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-white transition-colors cursor-pointer">
+                <Facebook size={18} />
+              </a>
+              <a href="https://instagram.com/golivra" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-white transition-colors cursor-pointer">
+                <Instagram size={18} />
+              </a>
+              <a href="https://twitter.com/golivra" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-white transition-colors cursor-pointer">
+                <Twitter size={18} />
+              </a>
+              <a href="https://linkedin.com/company/golivra" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-white transition-colors cursor-pointer">
+                <Linkedin size={18} />
+              </a>
             </div>
           </div>
           
@@ -24,19 +33,28 @@ export function SiteFooter() {
             <h4 className="text-sm font-black uppercase tracking-widest text-foreground">Plateforme</h4>
             <ul className="mt-6 space-y-4 text-base font-medium text-muted-foreground">
               <li><Link to="/solution" className="transition-colors hover:text-primary">Notre Solution</Link></li>
-              <li><Link to="/partenaire" className="transition-colors hover:text-primary">Espace Commerçants</Link></li>
-              <li><Link to="/partenaire" className="transition-colors hover:text-primary">Devenir Livreur</Link></li>
-              <li><Link to="/" className="transition-colors hover:text-primary">Tarifs</Link></li>
+              <li><Link to="/clients" className="transition-colors hover:text-primary">Espace Clients</Link></li>
+              <li><Link to="/commercants" className="transition-colors hover:text-primary">Espace Commerçants</Link></li>
+              <li><Link to="/logistique" className="transition-colors hover:text-primary">Espace Logistique</Link></li>
+              <li><Link to="/partenaire" className="transition-colors hover:text-primary font-bold text-foreground">Devenir Partenaire</Link></li>
             </ul>
           </div>
           
           <div>
             <h4 className="text-sm font-black uppercase tracking-widest text-foreground">Contact & Support</h4>
             <ul className="mt-6 space-y-4 text-base font-medium text-muted-foreground">
-              <li>Brazzaville, République du Congo</li>
-              <li>contact@golivra.app</li>
-              <li>+242 06 781 14 62</li>
-              <li><Link to="/" className="transition-colors hover:text-primary">Aide & FAQ</Link></li>
+              <li className="flex items-center gap-3">
+                <MapPin size={18} className="text-primary" />
+                Brazzaville, République du Congo
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail size={18} className="text-primary" />
+                contact@golivra.app
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone size={18} className="text-primary" />
+                +242 06 781 14 62
+              </li>
             </ul>
           </div>
         </div>
