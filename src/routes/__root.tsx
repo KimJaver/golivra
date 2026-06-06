@@ -14,6 +14,7 @@ import favicon from "@/assets/logo-golivra.png?url";
 import { reportAppError } from "../lib/error-reporting";
 import { SiteNav } from "../components/SiteNav";
 import { SiteFooter } from "../components/SiteFooter";
+import { ScrollToTop } from "../components/ScrollToTop";
 import { Toaster } from "../components/ui/sonner";
 
 function NotFoundComponent() {
@@ -80,17 +81,31 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover" },
+      {
+        name: "viewport",
+        content: "width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover",
+      },
       { title: "GoLivra - L'infrastructure du commerce au Congo" },
-      { name: "description", content: "GoLivra réunit commerces, clients et transporteurs sur une plateforme unique pour transformer l'économie locale au Congo." },
+      {
+        name: "description",
+        content:
+          "GoLivra réunit commerces, clients et transporteurs sur une plateforme unique pour transformer l'économie locale au Congo.",
+      },
       { name: "author", content: "GoLivra" },
-      { name: "keywords", content: "GoLivra, Brazzaville, Congo, livraison, commerce, marketplace, restaurant, boutique, logistique, e-commerce Congo" },
+      {
+        name: "keywords",
+        content:
+          "GoLivra, Brazzaville, Congo, livraison, commerce, marketplace, restaurant, boutique, logistique, e-commerce Congo",
+      },
       { name: "robots", content: "index, follow" },
       { name: "apple-mobile-web-app-capable", content: "yes" },
       { name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
       { name: "apple-mobile-web-app-title", content: "GoLivra" },
       { property: "og:title", content: "GoLivra - L'infrastructure du commerce au Congo" },
-      { property: "og:description", content: "La plateforme unique pour commander, vendre et livrer à Brazzaville." },
+      {
+        property: "og:description",
+        content: "La plateforme unique pour commander, vendre et livrer à Brazzaville.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@GoLivra" },
@@ -124,20 +139,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
-          "name": "GoLivra",
-          "url": "https://golivra.com",
-          "logo": "https://golivra.com/logo-golivra.png",
-          "description": "L'infrastructure du commerce au Congo. Marketplace, gestion de restaurants et réseau logistique interconnecté.",
-          "address": {
+          name: "GoLivra",
+          url: "https://golivra.com",
+          logo: "https://golivra.com/logo-golivra.png",
+          description:
+            "L'infrastructure du commerce au Congo. Marketplace, gestion de restaurants et réseau logistique interconnecté.",
+          address: {
             "@type": "PostalAddress",
-            "addressLocality": "Brazzaville",
-            "addressCountry": "CG"
+            addressLocality: "Brazzaville",
+            addressCountry: "CG",
           },
-          "sameAs": [
+          sameAs: [
             "https://facebook.com/golivra",
             "https://twitter.com/golivra",
-            "https://instagram.com/golivra"
-          ]
+            "https://instagram.com/golivra",
+          ],
         }),
       },
     ],
@@ -175,6 +191,7 @@ function RootComponent() {
         <SiteFooter />
       </div>
       <Toaster position="bottom-center" richColors closeButton />
+      <ScrollToTop />
     </QueryClientProvider>
   );
 }
